@@ -1,0 +1,35 @@
+name: 'Terraform CI/CD'
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  terraform:
+    name: 'Terraform'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v2
+
+      - name: 'Set up Google Cloud'
+        uses: google-github-actions/setup-gcloud@master
+        with:
+          version: 'latest'
+          service_account_key: ${{ secrets.GCP_SA_KEY }}
+          project_id: your-project-id
+
+      - name: 'Set up Terraform'
+        uses: hashicorp/setup-terraform@v1
+
+      - name: 'Terraform Init'
+        run: terraform init
+
+      - name: 'Terraform Plan'
+        run: terraform plan
+
+      - name: 'Terraform Apply'
+        if: github.ref == 'refs/heads/master'
+        run: terraform apply -auto-approve
