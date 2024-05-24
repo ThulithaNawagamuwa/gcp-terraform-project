@@ -18,7 +18,7 @@ jobs:
         uses: google-github-actions/setup-gcloud@v1
         with:
           version: 'latest'
-          service_account_key: ${{ secrets. }}
+          service_account_key: ${{ secrets.GCP_SA_KEY }}
           project_id: your-project-id
 
       - name: 'Set up Terraform'
