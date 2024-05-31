@@ -1,0 +1,5 @@
+project_id = "gcp-terraform-project-424308"
+region     = "us-central1"
+vpc_name   = "web-app-vpc"
+web_subnet_name = "web-subnet"
+web_subnet_ip  = "10.0.0.0/16"

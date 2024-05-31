@@ -6,3 +6,11 @@ resource "google_storage_bucket" "my-bucket" {
 
   public_access_prevention = "enforced"
 }
+
+module "network" {
+  source      = "./modules/network"
+  vpc_name    = var.vpc_name
+  web_subnet_name = var.web_subnet_name
+  web_subnet_ip = var.web_subnet_name
+  region      = var.region
+}
