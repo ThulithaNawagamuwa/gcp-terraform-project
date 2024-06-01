@@ -46,11 +46,11 @@ resource "google_compute_instance_template" "appserver" {
     foo = "bar"
   }
 
-  service_account {
-    # Google recommends custom service accounts that have cloud-platform scope and permissions granted via IAM Roles.
-    email  = google_service_account.default.email
-    scopes = ["cloud-platform"]
-  }
+#   service_account {
+#     # Google recommends custom service accounts that have cloud-platform scope and permissions granted via IAM Roles.
+#     email  = google_service_account.default.email
+#     scopes = ["cloud-platform"]
+#   }
 
   lifecycle {
     create_before_destroy = true
