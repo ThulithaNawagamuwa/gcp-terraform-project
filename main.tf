@@ -14,3 +14,7 @@ module "network" {
   web_subnet_ip = var.web_subnet_ip
   region      = var.region
 }
+
+module "managed_instance_group" {
+  source = "./modules/mig"
+}
