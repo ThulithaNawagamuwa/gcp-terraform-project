@@ -18,3 +18,7 @@ module "network" {
 module "managed_instance_group" {
   source = "./modules/mig"
 }
+
+module "http-loadbalancer" {
+  source = "./modules/loadbalancer"
+}
