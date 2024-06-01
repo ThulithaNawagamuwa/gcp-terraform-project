@@ -3,7 +3,7 @@ resource "google_compute_instance_template" "appserver" {
   name_prefix = "appserver-template"
   description = "This template is used to create app server instances."
 
-  tags = ["appserver-instance-template"]
+  tags = ["appserver-instance-template-"]
 
   labels = {
     environment = "dev"
