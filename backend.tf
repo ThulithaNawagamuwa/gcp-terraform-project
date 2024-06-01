@@ -1,6 +1,6 @@
-# terraform {
-#  backend "gcs" {
-#    bucket  = "terraform-state-bucket-gcp"
-#    prefix  = "terraform/state"
-#  }
-# }
+terraform {
+ backend "gcs" {
+   bucket  = "terraform-state-bucket-gcp"
+   prefix  = "terraform/state"
+ }
+}
