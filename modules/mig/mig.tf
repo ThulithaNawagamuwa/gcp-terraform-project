@@ -29,13 +29,13 @@ resource "google_compute_instance_template" "appserver" {
     boot              = true
   }
 
-  // Use an existing disk resource
-  disk {
-    // Instance Templates reference disks by name, not self link
-    source      = google_compute_disk.vm_disk.name
-    auto_delete = false
-    boot        = false
-  }
+#   // Use an existing disk resource
+#   disk {
+#     // Instance Templates reference disks by name, not self link
+#     source      = google_compute_disk.vm_disk.name
+#     auto_delete = false
+#     boot        = false
+#   }
 
   network_interface {
     network = "web-app-vpc"
@@ -58,18 +58,17 @@ resource "google_compute_instance_template" "appserver" {
 
 }
 
-data "google_compute_image" "my_image" {
-  family  = "debian-11"
-  project = "debian-cloud"
-}
+# data "google_compute_image" "my_image" {
+#   family  = "debian-11"
+#   project = "debian-cloud"
+# }
 
-resource "google_compute_disk" "vm_disk" {
-  name  = "existing-disk"
-  image = data.google_compute_image.my_image.self_link
-  size  = 10
-  type  = "pd-ssd"
-  zone  = "us-central1-a"
-}
+# resource "google_compute_disk" "vm_disk" {
+#   name  = "existing-disk"
+#   image = data.google_compute_image.my_image.self_link
+#   size  = 10
+#   type  = "pd-ssd"
+# }
 
 
 # resource "google_compute_health_check" "autohealing" {
