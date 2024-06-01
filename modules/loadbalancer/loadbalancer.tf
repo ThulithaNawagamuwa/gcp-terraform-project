@@ -1,3 +1,9 @@
+
+# Referencing the MIG module for the loadbalancer
+module "mig" {
+  source = "../mig"
+}
+
 module "gce-lb-http" {
   source  = "terraform-google-modules/lb-http/google"
   version = "~> 10.0"
