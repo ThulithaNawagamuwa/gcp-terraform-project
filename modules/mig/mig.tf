@@ -1,7 +1,3 @@
-# resource "google_service_account" "default" {
-#   account_id   = "service-account-id"
-#   display_name = "Service Account"
-# }
 
 resource "google_compute_instance_template" "appserver" {
   name        = "appserver-template"
@@ -29,14 +25,6 @@ resource "google_compute_instance_template" "appserver" {
     boot              = true
   }
 
-#   // Use an existing disk resource
-#   disk {
-#     // Instance Templates reference disks by name, not self link
-#     source      = google_compute_disk.vm_disk.name
-#     auto_delete = false
-#     boot        = false
-#   }
-
   network_interface {
     network = "web-app-vpc"
     subnetwork = "web-subnet"
@@ -46,29 +34,12 @@ resource "google_compute_instance_template" "appserver" {
     foo = "bar"
   }
 
-#   service_account {
-#     # Google recommends custom service accounts that have cloud-platform scope and permissions granted via IAM Roles.
-#     email  = google_service_account.default.email
-#     scopes = ["cloud-platform"]
-#   }
-
   lifecycle {
     create_before_destroy = true
   }
 
 }
 
-# data "google_compute_image" "my_image" {
-#   family  = "debian-11"
-#   project = "debian-cloud"
-# }
-
-# resource "google_compute_disk" "vm_disk" {
-#   name  = "existing-disk"
-#   image = data.google_compute_image.my_image.self_link
-#   size  = 10
-#   type  = "pd-ssd"
-# }
 
 
 # resource "google_compute_health_check" "autohealing" {
@@ -107,3 +78,12 @@ resource "google_compute_region_instance_group_manager" "instance_group_manager"
 #   }
 }
 
+
+
+output "target_tags" {
+  value = ["appserver-mig"]  
+}
+
+output "instance_group" {
+  value = google_compute_region_instance_group_manager.instance_group_manager.self_link
+}
