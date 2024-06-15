@@ -1,30 +1,45 @@
 variable "project_id" {
   description = "The GCP project ID"
   type        = string
-  default     = "gcp-terraform-project-424308"
 }
 
-variable "region" {
-  description = "The GCP region"
+variable "region1" {
+  description = "The default GCP region"
   type        = string
-  default     = "us-central1"
 }
 
-variable "vpc_name" {
+variable "region2" {
+  description = "The 2nd GCP region"
+  type        = string
+}
+
+variable "vpc_network_name" {
   description = "The name of the VPC"
   type        = string
-  default     = "web-app-vpc"
 }
 
-variable "web_subnet_name" {
-  description = "The name of the subnet"
+variable "web_subnet1_name" {
+  description = "The name of the web subnet 1"
   type        = string
-  default     = "web-subnet"
 }
 
-variable "web_subnet_ip" {
-  description = "The IP range of the subnet"
+variable "web_subnet1_ip" {
+  description = "The IP range of the web subnet 1"
   type        = string
-  default     = "10.0.0.0/16"
 }
+
+variable "web_subnet2_name" {
+  description = "The name of the web subnet 2"
+  type        = string
+}
+
+variable "web_subnet2_ip" {
+  description = "The IP range of the web subnet 2"
+  type        = string
+}
+
+
+variable "gcp_svc_key" {
+}
+
 
