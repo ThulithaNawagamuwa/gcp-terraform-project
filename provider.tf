@@ -7,7 +7,16 @@ terraform {
   }
 }
 
+# GCP provider
 provider "google" {
-  project = var.project_id
-  region  = var.region
+  # credentials = file(var.gcp_svc_key)
+  project     = var.project_id
+  region      = var.region1 #default region
+}
+
+# GCP beta provider
+provider "google-beta" {
+  # credentials = file(var.gcp_svc_key)
+  project     = var.project_id
+  region      = var.region1 #default region
 }
