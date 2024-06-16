@@ -8,6 +8,7 @@ This project demonstrates the construction of a robust, scalable, and highly ava
 
 The architecture separates the web and database layers, ensuring better performance and manageability. The core components include:
 
+- **Cloud DNS**: Provides scalable, reliable, and managed authoritative Domain Name System (DNS) service.
 - **Cloud Load Balancing**: Distributes incoming traffic across multiple Compute Engine instances to ensure high availability and reliability.
 - **Cloud CDN**: Caches content at edge locations to improve load times and reduce latency for end-users.
 - **Cloud Storage**: Stores static content, including static web pages and backend web pages.
