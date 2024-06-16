@@ -20,7 +20,7 @@ sudo bash -c "cat <<EOF > /var/www/html/index.html
 <head>
     <meta charset=\"UTF-8\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
-    <title>Welcome to Apache</title>
+    <title>Tech with Thulitha</title>
     <style>
         body { 
             font-family: Arial, sans-serif; 

@@ -39,7 +39,4 @@ variable "web_subnet2_ip" {
 }
 
 
-variable "gcp_svc_key" {
-}
-
 

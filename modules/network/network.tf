@@ -24,7 +24,3 @@ resource "google_compute_subnetwork" "vpc_web_subnet2" {
     google_compute_network.vpc_network
   ]
 }
-
-
-
-
