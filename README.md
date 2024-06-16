@@ -8,6 +8,8 @@ This project demonstrates the construction of a robust, scalable, and highly ava
 
 The architecture separates the web and database layers, ensuring better performance and manageability. The core components include:
 
+![Architecture Diagram](https://github.com/ThulithaNawagamuwa/gcp-terraform-project/assets/84464963/4835a0a3-2834-498a-a316-a277b4a37e61)
+
 - **Cloud DNS**: Provides scalable, reliable, and managed authoritative Domain Name System (DNS) service.
 - **Cloud Load Balancing**: Distributes incoming traffic across multiple Compute Engine instances to ensure high availability and reliability.
 - **Cloud CDN**: Caches content at edge locations to improve load times and reduce latency for end-users.
