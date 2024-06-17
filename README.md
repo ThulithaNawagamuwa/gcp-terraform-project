@@ -47,3 +47,5 @@ For the continuous deployment part, I utilized GitHub Actions. GitHub Actions is
 - **Automation**: Automatically deploy changes to the infrastructure when updates are pushed to the repository.
 - **Integration**: Seamlessly integrates with GitHub repositories, triggering workflows based on specific events.
 - **Scalability**: Handles complex workflows and parallel job executions.
+
+  
